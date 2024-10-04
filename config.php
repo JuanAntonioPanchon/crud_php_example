@@ -1,10 +1,12 @@
 <?php
 $host = 'localhost';
-$db   = 'tienda';
+$db   = 'libro';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
 
+
+//Esto es para la conexión
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
