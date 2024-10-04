@@ -8,15 +8,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion = $_POST['descripcion'];
     $precio = $_POST['precio'];
     $stock = $_POST['stock'];
+    $isbn = $_POST['isbn'];
+    $autor = $_POST['autor'];
 
     try {
-        $sql = "INSERT INTO jabones (nombre, descripcion, precio, stock) VALUES (:nombre, :descripcion, :precio, :stock)";
+        $sql = "INSERT INTO libros (nombre, descripcion, precio, stock, isbn, autor) VALUES (:nombre, :descripcion, :precio, :stock, :isbn, :autor)";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['nombre' => $nombre, 'descripcion' => $descripcion, 'precio' => $precio, 'stock' => $stock]);
+        $stmt->execute(['nombre' => $nombre, 'descripcion' => $descripcion, 'precio' => $precio, 'stock' => $stock, 'isbn' => $isbn, 'autor' => $autor]);
 
-        $message = 'Jabón añadido con éxito!';
+        $message = 'Libro añadido a la base de datos!';
     } catch (PDOException $e) {
-        $message = 'Error al añadir el jabón: ' . $e->getMessage();
+        $message = 'Error al añadir el nuevo libro: ' . $e->getMessage();
     }
 }
 ?>
@@ -48,7 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label for="stock">Stock:</label>
     <input type="number" name="stock" id="stock" required>
     <br>
-    <input type="submit" value="Añadir Jabón">
+    <label for="isbn">ISBN:</label>
+    <input type="text" name="isbn" id="isbn" required>
+    <br>
+    <label for="autor">Autor:</label>
+    <input type="text" name="autor" id="autor" required>
+    <br>
+    <input type="submit" value="Añadir Libro">
 </form>
 
 </body>
