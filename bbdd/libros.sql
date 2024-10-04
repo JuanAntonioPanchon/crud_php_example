@@ -6,17 +6,14 @@ CREATE TABLE libros (
     nombre VARCHAR(255) NOT NULL,
     descripcion TEXT,
     precio DECIMAL(10, 2) NOT NULL,
-    stock INT NOT NULL
+    stock INT NOT NULL,
+    autor VARCHAR(255) NOT NULL,
+    ISBN VARCHAR(255) NOT NULL
 );
 
 INSERT INTO libros (nombre, descripcion, precio, stock, ISBN, autor) VALUES
-('Jabón de Lavanda', 'Jabón artesanal de lavanda', 5.99, 50),
-('Jabón de Rosas', 'Jabón suavizante de rosas', 6.49, 40),
-('Jabón de Menta', 'Jabón refrescante de menta', 5.89, 60),
-('Jabón de Avena', 'Jabón exfoliante de avena', 5.49, 35),
-('Jabón de Cítricos', 'Jabón energizante de cítricos', 6.99, 45),
-('Jabón de Caléndula', 'Jabón calmante de caléndula', 6.79, 25),
-('Jabón de Chocolate', 'Jabón nutritivo de chocolate', 7.49, 30),
-('Jabón de Café', 'Jabón rejuvenecedor de café', 7.89, 20),
-('Jabón de Almendras', 'Jabón hidratante de almendras', 6.19, 40),
-('Jabón de Karité', 'Jabón suavizante de manteca de karité', 8.49, 15);
+('Alas de Sangre', 'libro de aventuras', 19.95, 50, 0-7645-2641-3, 'Rebeca Yarros'),
+('Harry Potter y el cáliz de fuego', 'libro de fantasías', 12.30, 40, 0-5432-2551-7, 'J.K Rowling'),
+('Harry Potter y la cámara secreta', 'libro de fantasías', 14.30, 20, 1-8882-2551-7, 'J.K Rowling'),
+('El principito', 'libro de búsqueda de la verdad a través de la amistad', 7.30, 16, 4-1111-2551-7, 'Antoine de Saint-Exupéry'),
+('Alas de Hierro', 'libro de aventuras', 19.95, 50, 2-2254-1544-0, 'Rebeca Yarros')
