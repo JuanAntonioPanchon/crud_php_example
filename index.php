@@ -14,7 +14,7 @@ $libro = $stmt->fetchAll();
 <ul>
 <?php foreach ($libros as $libro): ?>
     <li>
-        <?php echo $libro['nombre']; ?> - $<?php echo $libro['precio'];?> - $<?php echo $autor['autor']; ?>
+        <?php echo $libro['nombre']; ?> - $<?php echo $libro['precio'];?> - $<?php echo $libro['autor']; ?>
         <a href="edit.php?id=<?php echo $libro['id']; ?>">Editar</a>
         <a href="delete.php?id=<?php echo $libro['id']; ?>">Eliminar</a>
     </li>
