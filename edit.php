@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descripcion = $_POST['descripcion'];
 
     $stmt = $pdo->prepare("UPDATE libros SET nombre = ?, precio = ? WHERE id = ?");
-    $stmt->execute([$nombre, $precio, $id, $descripcion]);
+    $stmt->execute([$nombre, $precio, $id]);
 
     header('Location: index.php');
     exit;
